@@ -14,13 +14,14 @@ Installation
 
 obreddit requires python3 and Openbox
 Launch first a script
-A file is created /home/<username>/.config/obreddit.conf
+A file is created /home/$USER/.config/obreddit.conf
 change a variable yourusername by a name profile
 user = yourusername
 
 Edit a openbox menu through [obmenu](http://obmenu.sourceforge.net/) and add pipemenu which point to the script
-or Edit /home/<username>/.config/openbox/menu.xml
-and add <menu execute="python /home/<username>/obreddit.py" id="pipe-xxxx" label="Reddit"/>
+or Edit /home/$USER/.config/openbox/menu.xml and add:
+
+    <menu execute="python /home/<username>/obreddit.py" id="pipe-xxxx" label="Reddit"/>
 
 Licence
 -------

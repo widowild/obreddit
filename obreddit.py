@@ -18,6 +18,7 @@ import os
 import urllib.request
 import configparser
 import json
+import time
 import sys
 
 conf = os.environ['XDG_CONFIG_HOME'] + "/obreddit.conf"
@@ -39,10 +40,13 @@ raw = urllib.request.urlopen(url).read().decode('utf-8')
 data = json.loads(raw)['data']
 karma = data['link_karma']
 comment = data['comment_karma']
+created = data['created_utc']
 
 print('<openbox_pipe_menu>')
-print('<separator label="User "/>')
+print('<separator label="User"/>')
 print('<item label=\"%s\" />' % (user))
+print('<separator label="Redditor since"/>')
+print('<item label=\"%s\" />' % (time.ctime(created)))
 print('<separator label="Link Karma" />')
 print('<item label=\"%s\" />' % (karma))
 print('<separator label="Comment Karma" />')
